@@ -1,8 +1,6 @@
 package com.quetzalcoatl.springbootcoursewithhateoas.model;
 
 import lombok.*;
-import org.springframework.data.jpa.domain.AbstractPersistable;
-
 import javax.persistence.*;
 import java.util.Set;
 import javax.validation.constraints.Email;
@@ -16,7 +14,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @ToString(callSuper = true, exclude = {"password"})
-public class User extends AbstractPersistable<Integer> {
+public class User extends BaseEntity {
 
     @Column(name = "email", nullable = false, unique = true)
     @Email
