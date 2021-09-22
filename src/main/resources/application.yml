@@ -39,3 +39,15 @@ spring:
 #      visibility.getter: none
 #      visibility.setter: none
 #      visibility.is-getter: none
+
+  security:
+    user:
+      name: user
+      password: password
+      roles: USER
+
+logging:
+  level:
+    root: WARN
+    com.quetzalcoatl.springbootcoursewithhateoas: DEBUG
+    org.springframework.security.web.FilterChainProxy: DEBUG
