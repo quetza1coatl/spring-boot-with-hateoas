@@ -40,11 +40,11 @@ spring:
 #      visibility.setter: none
 #      visibility.is-getter: none
 
-  security:
-    user:
-      name: user
-      password: password
-      roles: USER
+#  security:
+#    user:
+#      name: user
+#      password: password
+#      roles: USER
 
 logging:
   level:
