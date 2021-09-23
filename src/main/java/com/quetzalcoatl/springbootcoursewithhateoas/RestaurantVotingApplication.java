@@ -24,8 +24,8 @@ private final UserRepository userRepository;
 
 	@Override
 	public void run(ApplicationArguments args) {
-		userRepository.save(new User("user@gmail.com", "User_First", "User_Last", "password", new HashSet<>(Collections.singletonList(Role.ROLE_USER))));
-		userRepository.save(new User("admin@javaops.ru", "Admin_First", "Admin_Last", "admin", new HashSet<>(Arrays.asList(Role.ROLE_USER, Role.ROLE_ADMIN))));
+		userRepository.save(new User("user@gmail.com", "User_First", "User_Last", "{noop}password", new HashSet<>(Collections.singletonList(Role.ROLE_USER))));
+		userRepository.save(new User("admin@javaops.ru", "Admin_First", "Admin_Last", "{noop}admin", new HashSet<>(Arrays.asList(Role.ROLE_USER, Role.ROLE_ADMIN))));
 		System.out.println(userRepository.findByLastNameContainingIgnoreCase("last"));
 	}
 }
