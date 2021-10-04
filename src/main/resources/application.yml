@@ -31,7 +31,9 @@ spring:
   data.rest:
     #  https://docs.spring.io/spring-data/rest/docs/current/reference/html/#getting-started.basic-settings
     basePath: /api
+    defaultPageSize: 20
     returnBodyOnCreate: true
+
 
 #   Jackson Serialization Issue Resolver
 #    jackson:
@@ -51,3 +53,9 @@ logging:
     root: WARN
     com.quetzalcoatl.springbootcoursewithhateoas: DEBUG
     org.springframework.security.web.FilterChainProxy: DEBUG
+
+server.servlet:
+  encoding:
+    charset: UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly
+    enabled: true # Enable http encoding support
+    force: true
