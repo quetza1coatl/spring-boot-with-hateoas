@@ -1,12 +1,13 @@
 package com.quetzalcoatl.springbootcoursewithhateoas.util;
 
+import com.quetzalcoatl.springbootcoursewithhateoas.error.IllegalRequestDataException;
 import com.quetzalcoatl.springbootcoursewithhateoas.model.BaseEntity;
 
 public class ValidationUtil {
 
     public static void checkNew(BaseEntity entity) {
         if (!entity.isNew()) {
-            throw new IllegalArgumentException(entity + " must be new (id=null)");
+            throw new IllegalRequestDataException(entity.getClass().getSimpleName() + " must be new (id=null)");
         }
     }
 
@@ -15,7 +16,7 @@ public class ValidationUtil {
         if (entity.isNew()) {
             entity.setId(id);
         } else if (entity.id() != id) {
-            throw new IllegalArgumentException(entity + " must has id=" + id);
+            throw new IllegalRequestDataException(entity.getClass().getSimpleName() + " must has id=" + id);
         }
     }
 }
